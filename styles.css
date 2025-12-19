@@ -1,0 +1,339 @@
+body {
+  background: radial-gradient(circle at top, #4b4b4b 0%, #1b1b1b 55%, #080808 100%);
+  color: #e5e5e5;
+  min-height: 100vh;
+  font-family: 'Minecraftia', 'Press Start 2P', 'Courier New', monospace;
+  letter-spacing: 0.05em;
+}
+
+main {
+  max-width: none;
+}
+
+.page-header {
+  background: rgba(30, 30, 30, 0.85);
+  border: 2px solid #505050;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+  padding: 28px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.page-header p {
+  color: #bcbcbc;
+  margin-bottom: 0;
+}
+
+.page-title {
+  letter-spacing: 0.25em;
+  text-shadow: 0 4px 0 rgba(0, 0, 0, 0.45);
+}
+
+.inventory-brand {
+  font-size: 0.9rem;
+  color: #f0f0f0;
+  letter-spacing: 0.12em;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7);
+}
+
+.search-box {
+  background: rgba(18, 18, 18, 0.9);
+  border-radius: 14px;
+  border: 1px solid #3d3d3d;
+  padding: 22px 24px;
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.45);
+}
+
+.search-box label {
+  color: #cfcfcf;
+  letter-spacing: 0.1em;
+}
+
+.search-box input {
+  background-color: rgba(10, 10, 10, 0.9);
+  border: 1px solid #565656;
+  color: #dddddd;
+  letter-spacing: 0.08em;
+}
+
+.search-box input::placeholder {
+  color: #969696;
+}
+
+.search-box input:focus {
+  border-color: #a3a3a3;
+  box-shadow: 0 0 0 0.25rem rgba(140, 140, 140, 0.25);
+}
+
+.type-filter {
+  background: rgba(24, 24, 24, 0.9);
+  border-radius: 14px;
+  border: 1px solid #3d3d3d;
+  padding: 18px 20px;
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.45);
+}
+
+.family-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.family-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(40, 40, 40, 0.95);
+  border: 1px solid #555555;
+  border-radius: 999px;
+  color: #e0e0e0;
+  padding: 8px 16px 8px 12px;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease, background-color 120ms ease;
+}
+
+.family-button:hover {
+  transform: translateY(-2px);
+  border-color: #ffbf00;
+  color: #ffbf00;
+}
+
+.family-button__icon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid rgba(90, 90, 90, 0.6);
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.45);
+}
+
+.family-button__icon img {
+  width: 24px;
+  height: 24px;
+  image-rendering: pixelated;
+}
+
+.family-button__icon--fallback {
+  font-weight: 700;
+  color: #ffbf00;
+}
+
+.family-button__label {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.family-button--active {
+  background: rgba(80, 80, 80, 0.95);
+  border-color: #ffbf00;
+  color: #ffbf00;
+  box-shadow: 0 0 0 2px rgba(255, 191, 0, 0.15);
+}
+
+.family-empty {
+  color: #868686;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+.status-line {
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  color: #b5b5b5;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 24px;
+  min-height: 220px;
+}
+
+.items-grid .placeholder,
+.items-grid .text-danger {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.item-entry {
+  display: flex;
+}
+
+.item-card {
+  background: linear-gradient(160deg, rgba(38, 38, 38, 0.95), rgba(18, 18, 18, 0.95));
+  border: 1px solid #444444;
+  border-radius: 18px;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
+  transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+  width: 100%;
+  height: 100%;
+}
+
+.item-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.6);
+  border-color: #9d9d9d;
+}
+
+.item-image-wrapper {
+  background: rgba(24, 24, 24, 0.9);
+  border-radius: 16px;
+  border: 1px solid #4a4a4a;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.45);
+}
+
+.item-image-wrapper img {
+  width: 120px;
+  height: 120px;
+  image-rendering: pixelated;
+}
+
+.item-name {
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  color: #ffbf00;
+}
+
+.item-meta {
+  font-size: 0.8rem;
+  color: #b0b0b0;
+}
+
+.item-card p {
+  color: #d3d3d3;
+  letter-spacing: 0.05em;
+}
+
+.badge {
+  font-family: 'Minecraftia', 'Press Start 2P', 'Courier New', monospace;
+  letter-spacing: 0.08em;
+  padding: 0.5rem 0.75rem;
+}
+
+.text-bg-success {
+  background-color: #3e3e3e !important;
+  color: #f1f1f1 !important;
+}
+
+.text-bg-dark {
+  background-color: #1a1a1a !important;
+  color: #e6e6e6 !important;
+}
+
+.placeholder {
+  color: #7b7b7b;
+}
+
+.item-modal .modal-content {
+  background: linear-gradient(160deg, rgba(32, 32, 32, 0.97), rgba(12, 12, 12, 0.97));
+  color: #f1f1f1;
+  border: 1px solid #4a4a4a;
+  border-radius: 16px;
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.7);
+}
+
+.item-modal .modal-header {
+  border-bottom: 1px solid #3f3f3f;
+  align-items: center;
+}
+
+.item-modal .modal-title {
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  color: #ffbf00;
+}
+
+.item-modal .btn-close {
+  filter: invert(1);
+}
+
+.item-modal .modal-body {
+  padding: 24px;
+  letter-spacing: 0.06em;
+}
+
+.modal-image-wrapper {
+  background: rgba(24, 24, 24, 0.9);
+  border: 1px solid #4a4a4a;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.45);
+}
+
+.modal-image-wrapper img {
+  width: 200px;
+  height: 200px;
+  image-rendering: pixelated;
+}
+
+.modal-meta {
+  font-size: 0.9rem;
+  color: #c8c8c8;
+}
+
+.modal-description {
+  color: #dddddd;
+  line-height: 1.6;
+}
+
+@media (max-width: 1600px) {
+  .items-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1400px) {
+  .items-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1100px) {
+  .items-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .items-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .item-image-wrapper {
+    height: 180px;
+  }
+}
+
+@media (max-width: 520px) {
+  .items-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-header {
+    letter-spacing: 0.08em;
+  }
+
+  .modal-image-wrapper img {
+    width: 160px;
+    height: 160px;
+  }
+}
