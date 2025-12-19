@@ -15,16 +15,15 @@
 <body>
   <main class="container-fluid py-5 px-4 px-lg-5">
     <section class="page-header mb-5">
-      <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
-        <div class="d-flex align-items-center gap-3">
-          <img src="assets/me.svg" alt="Crafting table icon" width="72" height="72" class="rounded">
-          <div>
-            <h1 class="page-title mb-2 ">MineVentory</h1>
-            <p class="mb-0 text-secondary">Browse blocks, tools, and curiosities straight from the Minecraft API.</p>
-          </div>
+      <div class="row align-items-center gy-3">
+        <div class="col-12 col-sm-auto d-flex justify-content-center justify-content-sm-start">
+          <img src="assets/me.svg" alt="Crafting table icon" width="72" height="72" class="rounded flex-shrink-0">
+        </div>
+        <div class="col text-center text-sm-start">
+          <h1 class="page-title mb-2">MineVentory</h1>
+          <p class="mb-0 text-secondary">Browse blocks, tools, and curiosities straight from the Minecraft API.</p>
         </div>
       </div>
-
     </section>
 
     <section class="search-box mb-4">
@@ -86,7 +85,7 @@
         <article class="col item-entry">
           <div class="item-card card h-100 p-4 d-flex flex-column" data-item-id="${item.namespacedId}">
             <div class="item-image-wrapper mb-4">
-              <img src="${item.image}" alt="${item.name}" loading="lazy">
+              <img class="item-image" src="${item.image}" alt="${item.name}" loading="lazy">
             </div>
             <h2 class="item-name text-uppercase text-truncate" title="${item.name}">${item.name}</h2>
             <p class="item-meta mb-2">ID: ${item.namespacedId}</p>
