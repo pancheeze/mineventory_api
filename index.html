@@ -37,8 +37,10 @@
       <div id="family-panel" class="family-panel"></div>
     </section>
 
-    <section id="items" class="items-grid">
-      <div class="placeholder">Loading items...</div>
+    <section id="items" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 items-grid">
+      <div class="col-12">
+        <div class="placeholder">Loading items...</div>
+      </div>
     </section>
   </main>
 
@@ -81,8 +83,8 @@
         : 'Renewability unknown';
 
       return `
-        <article class="item-entry">
-          <div class="item-card p-4 d-flex flex-column" data-item-id="${item.namespacedId}">
+        <article class="col item-entry">
+          <div class="item-card card h-100 p-4 d-flex flex-column" data-item-id="${item.namespacedId}">
             <div class="item-image-wrapper mb-4">
               <img src="${item.image}" alt="${item.name}" loading="lazy">
             </div>
@@ -100,7 +102,7 @@
 
     function showItems(items) {
       if (!items.length) {
-        itemsGrid.innerHTML = '<div class="placeholder">No items match your search.</div>';
+        itemsGrid.innerHTML = '<div class="col-12"><div class="placeholder">No items match your search.</div></div>';
         return;
       }
 
@@ -302,7 +304,7 @@
         itemList = Array.isArray(data) ? data.slice(0, maxItemsLimit) : [];
 
         if (!itemList.length) {
-          itemsGrid.innerHTML = '<div class="placeholder">No items returned by the API.</div>';
+          itemsGrid.innerHTML = '<div class="col-12"><div class="placeholder">No items returned by the API.</div></div>';
           setStatus('No data available from the API.');
           return;
         }
@@ -322,7 +324,7 @@
         fillFamilyButtons();
         runFilter();
       } catch (error) {
-        itemsGrid.innerHTML = '<div class="text-danger">Failed to load inventory. Please try again later.</div>';
+        itemsGrid.innerHTML = '<div class="col-12"><div class="text-danger">Failed to load inventory. Please try again later.</div></div>';
         setStatus(error.message);
         console.error('Minecraft API error:', error);
       } finally {
